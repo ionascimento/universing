@@ -9,6 +9,7 @@ This project was made for my TCM (TCM is a "Final paper").
 
 - Landing page
 - Astronomy history
+- Galileu Galilei
 - Astronomical Units
 - Light-years
 - Earth movement
@@ -24,7 +25,6 @@ This project was made for my TCM (TCM is a "Final paper").
 - ...
 - ...
 - ...
-- ...
-- ...
 - Black holes
 - Multiverses
+- Playground
