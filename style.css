@@ -84,7 +84,7 @@ footer {
   height: 8vw;
 }
 
-.logo h1 {
+.logo h1, .logo img {
   font-weight: 900;
   font-size: 8vw;
 }
@@ -96,15 +96,15 @@ footer {
 
 @media screen and (max-width: 720px) {
   .logo img {
-    height: 8rem;
+    height: 12vw;
   }
   
   .logo h1 {
-    font-size: 3.5rem;
+    font-size: 12vw;
   }
   
   .slogan h2 {
-    font-size: 1.5rem;
+    font-size: 4vw;
   }
 }
 
