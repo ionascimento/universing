@@ -1,7 +1,7 @@
 ScrollReveal().reveal('.navbar', {
   distance: '0px',
   opacity: '0',
-  duration: 1000
+  duration: 2000
 });
 
 ScrollReveal().reveal('.logo', {

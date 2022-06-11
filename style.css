@@ -25,14 +25,19 @@ body {
 /* NAVBAR */
 
 .navbar {
-  padding: 3rem 3rem;
-  margin-bottom: 3rem;
+  padding: 3vw 3vw;
+}
+
+@media screen and (max-width: 640px) {
+  .navbar {
+    display: none;
+  }
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.5vw;
   gap: 2rem;
   justify-content: flex-end;
 }
@@ -48,6 +53,7 @@ body {
 /* APRESENTATION */
 
 .apresentation {
+  margin-top: 12vh;
   width: 100%;
   display: flex;
   flex-direction: column;
