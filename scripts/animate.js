@@ -16,3 +16,10 @@ ScrollReveal().reveal('.slogan', {
   duration: 500,
   delay: 500
 });
+
+ScrollReveal().reveal('.about-item', {
+  distance: '400px',
+  origin: 'bottom',
+  duration: 1000,
+  opacity: '50'
+});
