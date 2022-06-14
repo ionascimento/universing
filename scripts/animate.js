@@ -1,3 +1,4 @@
+
 ScrollReveal().reveal('.navbar', {
   distance: '0px',
   opacity: '0',
@@ -7,6 +8,7 @@ ScrollReveal().reveal('.navbar', {
 ScrollReveal().reveal('.logo', {
   distance: '100px',
   origin: 'top',
+  opacity: 0,
   duration: 500
 });
 
@@ -14,12 +16,28 @@ ScrollReveal().reveal('.slogan', {
   distance: '100px',
   origin: 'bottom',
   duration: 500,
+  opacity: 0,
   delay: 500
 });
 
 ScrollReveal().reveal('.about-item', {
-  distance: '400px',
+  distance: '200px',
   origin: 'bottom',
   duration: 1000,
-  opacity: '50'
+  opacity: 0
+});
+
+ScrollReveal().reveal('.cta', {
+  distance: '0px',
+  origin: 'bottom',
+  duration: 1000,
+  opacity: 0,
+  delay: 1000
+});
+
+ScrollReveal().reveal('.final-cta', {
+  distance: '0px',
+  origin: 'bottom',
+  duration: 1000,
+  opacity: 0,
 });
