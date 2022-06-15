@@ -35,9 +35,17 @@ ScrollReveal().reveal('.cta', {
   delay: 1000
 });
 
-ScrollReveal().reveal('.final-cta', {
+ScrollReveal().reveal('.final-cta .invite', {
   distance: '0px',
   origin: 'bottom',
   duration: 1000,
+  delay: 1500,
   opacity: 0,
+});
+
+ScrollReveal().reveal('.final-cta img', {
+  distance: '1000px',
+  origin: 'left',
+  duration: 2000,
+  opacity: 1,
 });

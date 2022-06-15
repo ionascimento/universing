@@ -1,5 +1,8 @@
 const FPS = 60
 
+const body = document.querySelector("body")
+const html = document.querySelector("html")
+
 function randomNumber(min, max, floatPoints=0) {
   let number = min + Math.random() * max
 
@@ -8,8 +11,6 @@ function randomNumber(min, max, floatPoints=0) {
 }
 
 function getWindowsSize() {
-  let body = document.querySelector("body")
-  let html = document.querySelector("html")
   let width = window.innerWidth
   let height = Math.max( 
     body.scrollHeight, 
@@ -52,10 +53,10 @@ class Background {
 
   }
 
-  fixCanvasSize() {
+  fixCanvasSize(resize=false) {
     let [width, height] = getWindowsSize()
 
-    height += 100
+    if(resize == false) height += 120 
 
     this.element.width = width
     this.element.height = height
@@ -112,11 +113,13 @@ class Background {
 
 }
 
+/* STARS */
+
 const bg = new Background(document.querySelector("canvas#background"), true)
 
 bg.start = () => {
 
-  bg.fixCanvasSize()
+  bg.fixCanvasSize(true)
 
   bg.context.clearRect(0,0,bg.width,bg.height)
 
@@ -134,6 +137,8 @@ bg.start = () => {
 }
 
 bg.start()
+
+/* COMETS */
 
 const comet = new Background(document.querySelector("canvas#comet"))
 
@@ -161,37 +166,16 @@ function generateRandomComet() {
     y = randomNumber(0, comet.height,2)
   }
 
-  let directionx = 0
-  let directiony = 0
-
-  let DirectionX = randomNumber(1,10)
-  let DirectionY = randomNumber(1,10)
-
-  if(DirectionX > 5) {
-    directionx = "right"
-  }else{
-    directionx = "left"
-  }
-
-  if(DirectionY > 5) {
-    directiony = "bottom"
-  }else{
-    directiony = "bottom"
-  }
-
-  if(x < comet.width/2) directionx = "right"
-  if(y < comet.height/2) directiony = "bottom"
-
   comet.comets.push({
     x: x,
     y: y,
     xspeed: 0,
     yspeed: 0,
-    radius: randomNumber(0.5, 3.5,2),
+    radius: randomNumber(0.5, 3,2),
     opacity: randomNumber(0.3,1,2),
     followLine: [],
-    directionX: directionx,
-    directionY: directiony,
+    directionX: "right",
+    directionY: "bottom",
     accelerationX: randomNumber(0.01, 0.03, 2),
     accelerationY: randomNumber(0.01, 0.03, 2)
   })
@@ -226,95 +210,3 @@ function randomCometTime() {
 randomCometTime()
 
 comet.start()
-
-/*const background = document.querySelector("canvas#background")
-const context = background.getContext("2d")
-
-const body = document.body, html = document.documentElement
-
-var WIDTH = window.innerWidth
-var HEIGHT = Math.max( 
-  body.scrollHeight, 
-  body.offsetHeight, 
-  html.clientHeight, 
-  html.scrollHeight, 
-  html.offsetHeight)
-
-function randomNumber(min, max, floatPoints=0) {
-  let number = min + Math.random() * max
-
-  if(floatPoints == 0) return Math.trunc(number)
-  return Number(number.toPrecision(floatPoints + 1))
-}
-
-function getRandomPosition() {
-  return {
-    x: randomNumber(0, background.width),
-    y: randomNumber(0, background.height)
-  }
-}
-
-function drawStar({x, y}) {
-
-  let radius = randomNumber(0.3,4, 2)
-  let opacity = randomNumber(0.3, 1, 1)
-
-  context.beginPath()
-  context.rotate(45 * Math.PI / 180)
-  context.rect(x-radius/2, y-radius/2, radius, radius)
-  context.globalAlpha = opacity
-  context.fillStyle = "#ffffff"
-  context.fill()
-  context.closePath()
-
-  context.beginPath()
-  context.arc(x, y, radius-(radius*0.45), 0, 2 * Math.PI)
-  context.globalAlpha = opacity
-  context.fillStyle = "#ffffff"
-  context.fill()
-  context.closePath()
-
-}
-
-function drawStars(amount) {
-
-  context.fillStyle = "#000311"
-  context.fillRect(0,0,background.width,background.height)
-
-  for(let i = 0; i < amount; i++) {
-
-    drawStar(getRandomPosition())
-
-  }
-
-}
-
-function updateCanvasSize(element) {
-
-  element.width = WIDTH
-  element.height = HEIGHT
-
-}
-
-function init() {
-
-  updateCanvasSize(background)
-  drawStars((WIDTH + HEIGHT) / 2)
-
-}
-
-init()
-
-window.onresize = () => {
-  WIDTH = window.innerWidth
-  HEIGHT = Math.max( 
-    body.scrollHeight, 
-    body.offsetHeight, 
-    html.clientHeight, 
-    html.scrollHeight, 
-    html.offsetHeight)
-
-  updateCanvasSize(background)
-  init()
-}
-*/
