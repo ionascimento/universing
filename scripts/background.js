@@ -53,10 +53,8 @@ class Background {
 
   }
 
-  fixCanvasSize(resize=false) {
+  fixCanvasSize() {
     let [width, height] = getWindowsSize()
-
-    if(resize == false) height += 120 
 
     this.element.width = width
     this.element.height = height
@@ -119,7 +117,7 @@ const bg = new Background(document.querySelector("canvas#background"), true)
 
 bg.start = () => {
 
-  bg.fixCanvasSize(true)
+  bg.fixCanvasSize()
 
   bg.context.clearRect(0,0,bg.width,bg.height)
 
@@ -135,8 +133,6 @@ bg.start = () => {
   }
 
 }
-
-bg.start()
 
 /* COMETS */
 
@@ -209,4 +205,9 @@ function randomCometTime() {
 
 randomCometTime()
 
-comet.start()
+window.onload = () => {
+
+  bg.start()
+  comet.start()
+
+}
