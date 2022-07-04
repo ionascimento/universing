@@ -198,7 +198,7 @@ comet.loop = () => {
 
 function randomCometTime() {
 
-  generateRandomComet()
+  if(document.hasFocus()) generateRandomComet()
 
   setTimeout(() => { randomCometTime() }, randomNumber(1,4) * 1000)
 }
