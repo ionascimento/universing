@@ -105,7 +105,7 @@ class Background {
 
   updateFrames() {
 
-    setInterval(() => { this.loop() }, 1000 / FPS)
+    requestAnimationFrame(() => { this.loop(); this.updateFrames() })
 
   }
 
@@ -168,7 +168,7 @@ function generateRandomComet() {
     xspeed: 0,
     yspeed: 0,
     radius: randomNumber(0.5, 3,2),
-    opacity: randomNumber(0.3,1,2),
+    opacity: randomNumber(0.6,1,2),
     followLine: [],
     directionX: "right",
     directionY: "bottom",
@@ -200,7 +200,7 @@ function randomCometTime() {
 
   if(document.hasFocus()) generateRandomComet()
 
-  setTimeout(() => { randomCometTime() }, randomNumber(1,4) * 1000)
+  setTimeout(() => { randomCometTime() }, randomNumber(2,4) * 1000)
 }
 
 randomCometTime()
