@@ -1,213 +1,196 @@
-const FPS = 60
+var body = document.querySelector("body")
 
-const body = document.querySelector("body")
-const html = document.querySelector("html")
+class AbstractBackground {
 
-function randomNumber(min, max, floatPoints=0) {
-  let number = min + Math.random() * max
+  constructor(canvas) {
 
-  if(floatPoints == 0) return Math.trunc(number)
-  return Number(number.toPrecision(floatPoints + 1))
-}
-
-function getWindowsSize() {
-  let width = window.innerWidth
-  let height = Math.max( 
-    body.scrollHeight, 
-    body.offsetHeight, 
-    html.clientHeight, 
-    html.scrollHeight, 
-    html.offsetHeight)
-  return [width, height]
-}
-
-class Background {
-
-  constructor(element, noLoop = false) {
-
-    if(!(element instanceof HTMLCanvasElement)) throw new Error("Element is not a canvas")
-
-    this.element = element
-    this.context = element.getContext("2d")
-
-    this.comets = []
-
-    this.fpsCount = 0
-
-    this.stars = []
-
-    this._width = 0
-    this._height = 0
-
-    this.fixCanvasSize()
-
-    window.addEventListener("resize", () => {
- 
-      let [width, height] = getWindowsSize()
-
-      if(width != this.width || this.height != height) this.start()
-
-    })
-
-    if(!noLoop) this.updateFrames() // loop
+    this.canvas = document.querySelector(canvas)
+    this.context = this.canvas.getContext("2d")
 
   }
 
-  fixCanvasSize() {
-    let [width, height] = getWindowsSize()
-
-    this.element.width = width
-    this.element.height = height
-
-    this._width = width
-    this._height = height
-  }
-
-  get width() {
-    return this._width
-  }
-  set width(width) {
-    this.element.width = width
-    this._width = width
-  }
-
-  get height() {
-    return this._height
-  }
-  set height(height) {
-    this.element.height = height
-    this._height = height
-  }
-
-  start() { }
-  loop() { }
-
-  drawStar(x, y, radius, opacity, comet=false) {
-  
+  drawStar({
+    x, y, radius, opacity
+  }) {
+    // Circle
     this.context.beginPath()
-    this.context.arc(x, y, radius-(radius*0.45), 0, 2 * Math.PI)
+    this.context.arc(x, y, radius*0.53, 0, Math.PI*2)
     this.context.globalAlpha = opacity
     this.context.fillStyle = "#ffffff"
     this.context.fill()
     this.context.closePath()
 
-    if(comet) {
-      this.context.beginPath()
-      for(let line of comet) {
-        this.context.lineTo(line.x, line.y)
-      }
-      this.context.strokeStyle = "#fff";
-      this.context.stroke()
-      this.context.closePath()
+    // Square
+    this.context.save()
+    
+    this.context.translate(x, y)
+    this.context.rotate(45 * Math.PI / 180)
+
+    this.context.globalAlpha = opacity
+    this.context.fillStyle = "#ffffff"
+    this.context.fillRect(-radius/2, -radius/2, radius, radius)
+
+    this.context.restore()
+  }
+
+}
+
+class StarsBackground extends AbstractBackground {
+
+  constructor(canvas, amount) {
+
+    super(canvas)
+
+    this.starsAmount = amount
+    this.defaultAmount = !amount // If client gives an amount, then default amount is not true.
+
+    this.fixSize()
+    this.drawStars()
+    this.sizeLoop()
+
+    this.revealAnimation()
+  }
+
+  revealAnimation() {
+    this.canvas.style.opacity = "1"
+  }
+
+  sizeLoop() {
+
+    if(this.canvas.width < body.clientWidth
+    || this.canvas.height < body.clientHeight) {
+      this.fixSize()
+      this.drawStars()
+    }
+
+    requestAnimationFrame(() => { this.sizeLoop() })
+
+  }
+
+  fixSize() {
+    this.canvas.width = body.clientWidth
+    this.canvas.height = body.clientHeight
+
+    if(this.defaultAmount) this.starsAmount = (this.canvas.width + this.canvas.height) / 3
+  }
+
+  drawStars() {
+
+    for(let i = 0; i < this.starsAmount; i++) {
+
+      this.drawStar({
+        x: randomNumber(0, this.canvas.width, 4),
+        y: randomNumber(0, this.canvas.height, 4),
+        opacity: randomNumber(0.2, 1, 2),
+        radius: randomNumber(1, 4, 4)
+      })
+
     }
 
   }
 
-  updateFrames() {
+}
 
-    requestAnimationFrame(() => { this.loop(); this.updateFrames() })
+class CometsBackground extends AbstractBackground {
+
+  constructor(canvas) {
+
+    super(canvas)
+
+    this.comets = []
+
+    this.#init()
+  }
+
+  #init() {
+    this.start()
+    this.loop()
+  }
+
+  start() {
+
+    this.canvas.width = window.innerWidth
+
+    setTimeout(() => { this.generateCometsLoop() }, 2000)
 
   }
 
-}
+  generateCometsLoop() {
 
-/* STARS */
+    let xy = randomNumber(0, 10)
 
-const bg = new Background(document.querySelector("canvas#background"), true)
+    let x = 0, y = 0
 
-bg.start = () => {
+    if(xy > 5) x = randomNumber(0, this.canvas.width/4*3, 4)
+    else y = randomNumber(0, this.canvas.height/4*3, 4)
 
-  bg.fixCanvasSize()
+    if(document.hasFocus()) this.createComet({
+      x,
+      y,
+      opacity: randomNumber(0.3, 1, 4),
+      radius: randomNumber(1, 3, 4)
+    })
 
-  bg.context.clearRect(0,0,bg.width,bg.height)
+    setTimeout(() => { this.generateCometsLoop() }, randomNumber(1,4,2) * 1000)
 
-  let stars = bg.width + bg.height
-
-  for(let i = 0; i < stars; i++) {
-    bg.drawStar(
-      randomNumber(0,bg.width,2), 
-      randomNumber(0,bg.height,2), 
-      randomNumber(0.2,3.5,2),
-      randomNumber(0,1,2)
-    )
   }
 
-}
+  loop() {
 
-/* COMETS */
+    this.canvas.height = body.clientHeight
+    if(this.canvas.width != body.clientWidth) this.canvas.width = body.clientWidth
 
-const comet = new Background(document.querySelector("canvas#comet"))
+    for(let comet of this.comets) {
 
-comet.start = () => {
+      this.updateComet(comet)
+      this.drawComet(comet)
 
-  comet.width = bg.width
-  comet.height = bg.height
+    }
 
-  comet.context.clearRect(0,0,comet.width,comet.height)
-
-  generateRandomComet()
-
-}
-
-function generateRandomComet() {
-
-  let xOrY = randomNumber(1,10)
-
-  let x = 0
-  let y = 0
-
-  if(xOrY > 5) {
-    x = randomNumber(0, comet.width,2)
-  }else{
-    y = randomNumber(0, comet.height,2)
+    requestAnimationFrame(() => { this.loop() })
   }
 
-  comet.comets.push({
-    x: x,
-    y: y,
-    xspeed: 0,
-    yspeed: 0,
-    radius: randomNumber(0.5, 3,2),
-    opacity: randomNumber(0.6,1,2),
-    followLine: [],
-    directionX: "right",
-    directionY: "bottom",
-    accelerationX: randomNumber(0.01, 0.03, 2),
-    accelerationY: randomNumber(0.01, 0.03, 2)
-  })
-}
-
-comet.loop = () => {
-
-  comet.context.clearRect(0,0,comet.width,comet.height)
-
-  for(let cum of comet.comets) {
-    cum.followLine.push({x: cum.x, y: cum.y})
-    if(cum.followLine.length > 10) cum.followLine.shift()
-    cum.x+=cum.xspeed
-    cum.y+=cum.yspeed
-    comet.drawStar(cum.x, cum.y, cum.radius, cum.opacity, cum.followLine)
-    cum.xspeed += cum.directionX == "right" ? cum.accelerationX : cum.accelerationX * -1
-    cum.yspeed += cum.directionY == "bottom" ? cum.accelerationY : cum.accelerationY * -1
-
-    if(cum.followLine[0].x > comet.width || 
-       cum.followLine[0].y > comet.height) comet.comets.splice(comet.comets.indexOf(cum), 1)
+  createComet({x, y, radius, opacity}) {
+    this.comets.push({
+      x, y, radius, opacity,
+      xspeed: 2,
+      yspeed: 2,
+      lines: []
+    })
   }
 
-}
+  removeComet(comet) {
 
-function randomCometTime() {
+    this.comets.splice(this.comets.indexOf(comet), 1)
 
-  if(document.hasFocus()) generateRandomComet()
+  }
 
-  setTimeout(() => { randomCometTime() }, randomNumber(2,4) * 1000)
-}
+  updateComet(comet) {
 
-randomCometTime()
+    comet.lines.push({x: comet.x, y: comet.y})
 
-window.onload = () => {
+    if(comet.lines.length > comet.radius*4) comet.lines.shift() 
 
-  bg.start()
-  comet.start()
+    comet.x += comet.xspeed
+    comet.y += comet.yspeed
+
+    if(comet.lines[0].x > this.canvas.width
+    || comet.lines[0].y > this.canvas.height) this.removeComet(comet)
+
+  }
+
+  drawComet(comet) {
+
+    this.drawStar(comet)
+
+    this.context.beginPath()
+    for(let line of comet.lines) {
+      this.context.lineTo(line.x, line.y)
+    }
+    this.context.strokeStyle = "#fff";
+    this.context.stroke()
+    this.context.closePath()
+
+  }
 
 }
