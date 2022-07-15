@@ -15,7 +15,7 @@ class AbstractBackground {
     // Circle
     this.context.beginPath()
     this.context.arc(x, y, radius*0.53, 0, Math.PI*2)
-    this.context.globalAlpha = opacity
+    this.context.globalAlpha = opacity / 2
     this.context.fillStyle = "#ffffff"
     this.context.fill()
     this.context.closePath()
@@ -57,8 +57,8 @@ class StarsBackground extends AbstractBackground {
 
   sizeLoop() {
 
-    if(this.canvas.width < body.clientWidth
-    || this.canvas.height < body.clientHeight) {
+    if(this.canvas.width != body.clientWidth
+    || this.canvas.height != body.clientHeight) {
       this.fixSize()
       this.drawStars()
     }
@@ -71,7 +71,7 @@ class StarsBackground extends AbstractBackground {
     this.canvas.width = body.clientWidth
     this.canvas.height = body.clientHeight
 
-    if(this.defaultAmount) this.starsAmount = (this.canvas.width + this.canvas.height) / 3
+    if(this.defaultAmount) this.starsAmount = (this.canvas.width + this.canvas.height) / 2.5
   }
 
   drawStars() {
@@ -82,7 +82,7 @@ class StarsBackground extends AbstractBackground {
         x: randomNumber(0, this.canvas.width, 4),
         y: randomNumber(0, this.canvas.height, 4),
         opacity: randomNumber(0.2, 1, 2),
-        radius: randomNumber(1, 4, 4)
+        radius: randomNumber(1, 3, 4)
       })
 
     }
