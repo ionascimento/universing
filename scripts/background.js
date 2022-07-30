@@ -128,7 +128,7 @@ class CometsBackground extends AbstractBackground {
       x,
       y,
       opacity: randomNumber(0.3, 1, 4),
-      radius: randomNumber(1, 3, 4)
+      radius: randomNumber(1.5, 3, 4)
     })
 
     setTimeout(() => { this.generateCometsLoop() }, randomNumber(1,4,2) * 1000)
@@ -188,6 +188,7 @@ class CometsBackground extends AbstractBackground {
       this.context.lineTo(line.x, line.y)
     }
     this.context.strokeStyle = "#fff";
+    this.context.lineWidth = 1.5
     this.context.stroke()
     this.context.closePath()
 
