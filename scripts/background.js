@@ -117,6 +117,11 @@ class CometsBackground extends AbstractBackground {
 
   generateCometsLoop() {
 
+    setTimeout(() => { this.generateCometsLoop() }, randomNumber(1,4,2) * 1000)
+
+    if(!document.hasFocus()) return
+    if(this.comets.length >= 15) return
+
     let xy = randomNumber(0, 10)
 
     let x = 0, y = 0
@@ -124,14 +129,14 @@ class CometsBackground extends AbstractBackground {
     if(xy > 5) x = randomNumber(0, this.canvas.width/4*3, 4)
     else y = randomNumber(0, this.canvas.height/4*3, 4)
 
-    if(document.hasFocus()) this.createComet({
+    this.createComet({
       x,
       y,
       opacity: randomNumber(0.3, 1, 4),
       radius: randomNumber(1.5, 3, 4)
     })
 
-    setTimeout(() => { this.generateCometsLoop() }, randomNumber(1,4,2) * 1000)
+    
 
   }
 

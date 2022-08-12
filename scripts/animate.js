@@ -44,8 +44,8 @@ ScrollReveal().reveal('.final-cta .invite', {
 });
 
 ScrollReveal().reveal('.final-cta img', {
-  distance: '1000px',
+  distance: '800px',
   origin: 'left',
   duration: 2000,
-  opacity: 1,
+  opacity: 1
 });

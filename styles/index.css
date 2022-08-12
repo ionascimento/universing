@@ -192,8 +192,8 @@ footer {
 
 @media screen and (max-width: 720px) {
   .about {
-    margin-top: 20vh;
-    gap: 15vh;
+    margin-top: 50vw;
+    gap: 30vw;
   }
   .about-item {
     flex-direction: column-reverse;
