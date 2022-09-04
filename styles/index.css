@@ -201,15 +201,15 @@ footer {
 
 @keyframes rocket {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-40%);
   }
 
   50% {
-    transform: translateX(50%);
+    transform: translateX(40%);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-40%);
   }
 }
 
@@ -243,6 +243,9 @@ footer {
   }
   .final-cta h1 {
     font-size: 6vw;
+  }
+  .final-cta img {
+    max-height: 14rem;
   }
 }
 
