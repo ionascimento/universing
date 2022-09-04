@@ -33,3 +33,33 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #ccc;
 }
+
+/* ANIMATIONS */
+
+@keyframes floaty {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes floatx {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
+}

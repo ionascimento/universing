@@ -143,6 +143,17 @@ footer {
 
 .about-item img {
   height: 16rem;
+  
+}
+
+.about-item:nth-child(1) img {
+  animation: floaty 7s infinite;
+}
+.about-item:nth-child(2) img {
+  animation: floatx 8.5s infinite;
+}
+.about-item:nth-child(3) img {
+  animation: floaty 10s infinite;
 }
 
 .about-item h1 {
@@ -186,8 +197,25 @@ footer {
   transform: scale(105%, 105%);
 }
 
+/* ROCKET ANIMATION */
+
+@keyframes rocket {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  50% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .final-cta img {
   max-height: 16rem;
+  animation: rocket 8s infinite;
 }
 
 @media screen and (max-width: 720px) {
