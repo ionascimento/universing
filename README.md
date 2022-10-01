@@ -12,7 +12,7 @@ Universing is a website to teach astronomical concepts in a simple way.
 - Light-years
 - Earth movement
 - Seasons
-- Moon phases
+- The Moon
 - Eclipses
 - Constellations
 - Solar System
