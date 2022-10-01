@@ -11,6 +11,7 @@ Universing is a website to teach astronomical concepts in a simple way.
 - Astronomical Units
 - Light-years
 - Earth movement
+- Seasons
 - Moon phases
 - Eclipses
 - Constellations
@@ -19,7 +20,6 @@ Universing is a website to teach astronomical concepts in a simple way.
 - Milky way
 - Black holes
 - Multiverses
-- ...
 - ...
 - ...
 - Playground
