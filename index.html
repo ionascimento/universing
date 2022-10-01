@@ -113,12 +113,12 @@
   <canvas id="comet"></canvas>
   <script src="scripts/background.js"></script>
   <script>
-    const comets = new CometsBackground("#comet")
-    
-    setTimeout(() => {
-      const stars = new StarsBackground("#background")
-    }, 300)
-    
+    async function main() {
+      await startStarBackground('#background');
+      await startCometBackground('#comet');
+    }
+
+    main();
   </script>
 
   <script src="scripts/animate.js"></script>

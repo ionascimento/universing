@@ -1,202 +1,173 @@
-var body = document.querySelector("body")
+const body = document.querySelector("body");
+var pageLoaded = false;
 
-class AbstractBackground {
-
-  constructor(canvas) {
-
-    this.canvas = document.querySelector(canvas)
-    this.context = this.canvas.getContext("2d")
-
-  }
-
-  drawStar({
-    x, y, radius, opacity
-  }) {
-    // Circle
-    this.context.beginPath()
-    this.context.arc(x, y, radius*0.53, 0, Math.PI*2)
-    this.context.globalAlpha = opacity / 2
-    this.context.fillStyle = "#ffffff"
-    this.context.fill()
-    this.context.closePath()
-
-    // Square
-    this.context.save()
-    
-    this.context.translate(x, y)
-    this.context.rotate(45 * Math.PI / 180)
-
-    this.context.globalAlpha = opacity
-    this.context.fillStyle = "#ffffff"
-    this.context.fillRect(-radius/2, -radius/2, radius, radius)
-
-    this.context.restore()
-  }
-
+async function waitForPageLoad() {
+  return new Promise((resolve, reject) => {
+    if(pageLoaded) resolve()
+    window.onload = () => { pageLoaded = true; resolve() }
+  })
 }
 
-class StarsBackground extends AbstractBackground {
-
-  constructor(canvas, amount) {
-
-    super(canvas)
-
-    this.starsAmount = amount
-    this.defaultAmount = !amount // If client gives an amount, then default amount is not true.
-
-    this.fixSize()
-    this.drawStars()
-    this.sizeLoop()
-
-    this.revealAnimation()
-  }
-
-  revealAnimation() {
-    this.canvas.style.opacity = "1"
-  }
-
-  sizeLoop() {
-
-    if(this.canvas.width != body.clientWidth
-    || this.canvas.height != body.clientHeight) {
-      this.fixSize()
-      this.drawStars()
-    }
-
-    requestAnimationFrame(() => { this.sizeLoop() })
-
-  }
-
-  fixSize() {
-    this.canvas.width = body.clientWidth
-    this.canvas.height = body.clientHeight
-
-    if(this.defaultAmount) this.starsAmount = (this.canvas.width + this.canvas.height) / 2.5
-  }
-
-  drawStars() {
-
-    for(let i = 0; i < this.starsAmount; i++) {
-
-      this.drawStar({
-        x: randomNumber(0, this.canvas.width, 4),
-        y: randomNumber(0, this.canvas.height, 4),
-        opacity: randomNumber(0.2, 1, 2),
-        radius: randomNumber(1, 3, 4)
-      })
-
-    }
-
-  }
-
+function fixCanvasSize(canvas) {
+  canvas.width = body.clientWidth
+  canvas.height = body.clientHeight
 }
 
-class CometsBackground extends AbstractBackground {
+function drawStar(context, {
+  x, y, radius, opacity
+}) {
+  // Circle
+  context.beginPath();
+  context.arc(x, y, radius*0.53, 0, Math.PI*2);
+  context.globalAlpha = opacity / 2;
+  context.fillStyle = "#ffffff";
+  context.fill();
+  context.closePath();
 
-  constructor(canvas) {
+  // Square
+  context.save();
+  
+  context.translate(x, y);
+  context.rotate(45 * Math.PI / 180);
 
-    super(canvas)
+  context.globalAlpha = opacity;
+  context.fillStyle = "#ffffff";
+  context.fillRect(-radius/2, -radius/2, radius, radius);
 
-    this.comets = []
+  context.restore();
+}
 
-    this.#init()
-  }
-
-  #init() {
-    this.start()
-    this.loop()
-  }
-
-  start() {
-
-    this.canvas.width = window.innerWidth
-
-    setTimeout(() => { this.generateCometsLoop() }, 2000)
-
-  }
-
-  generateCometsLoop() {
-
-    setTimeout(() => { this.generateCometsLoop() }, randomNumber(1,4,2) * 1000)
-
-    if(!document.hasFocus()) return
-    if(this.comets.length >= 15) return
-
-    let xy = randomNumber(0, 10)
-
-    let x = 0, y = 0
-
-    if(xy > 5) x = randomNumber(0, this.canvas.width/4*3, 4)
-    else y = randomNumber(0, this.canvas.height/4*3, 4)
-
-    this.createComet({
-      x,
-      y,
-      opacity: randomNumber(0.3, 1, 4),
-      radius: randomNumber(1.5, 3, 4)
-    })
-
-    
-
-  }
-
-  loop() {
-
-    this.canvas.height = body.clientHeight
-    if(this.canvas.width != body.clientWidth) this.canvas.width = body.clientWidth
-
-    for(let comet of this.comets) {
-
-      this.updateComet(comet)
-      this.drawComet(comet)
-
-    }
-
-    requestAnimationFrame(() => { this.loop() })
-  }
-
-  createComet({x, y, radius, opacity}) {
-    this.comets.push({
-      x, y, radius, opacity,
-      xspeed: 2,
-      yspeed: 2,
-      lines: []
+function drawStars(canvas, amount) {
+  let context = canvas.getContext("2d");
+  for(let i = 0; i < amount; i++) {
+    drawStar(context, {
+      x: randomNumber(0, canvas.width, 4),
+      y: randomNumber(0, canvas.height, 4),
+      opacity: randomNumber(0.2, 1, 4),
+      radius: randomNumber(1, 3, 4)
     })
   }
+}
 
-  removeComet(comet) {
+async function initializeBackground(canvas) {
+  await waitForPageLoad();
+  fixCanvasSize(canvas);
+}
 
-    this.comets.splice(this.comets.indexOf(comet), 1)
+function getDefaultStarsAmount(canvas) {
+  return (canvas.width + canvas.height) / 2.5;
+}
 
+function autoFixOnResize(canvas, starsAmount) {
+  window.onresize = () => {
+    fixCanvasSize(canvas);
+    drawStars(canvas, starsAmount || getDefaultStarsAmount(canvas));
+  }
+}
+
+function fadeInEffect(canvas) {
+  canvas.style.opacity = 1;
+}
+
+async function startStarBackground(canvasSelector, starsAmount) {
+  let canvas = document.querySelector(canvasSelector);
+  await initializeBackground(canvas);
+  
+  drawStars(canvas, starsAmount || getDefaultStarsAmount(canvas));
+  autoFixOnResize(canvas, starsAmount);
+
+  fadeInEffect(canvas);
+}
+
+function fixSizeOnLoop(canvas) {
+  canvas.height = body.clientHeight;
+  if(canvas.width != body.clientWidth) canvas.width = body.clientWidth;
+}
+
+var comets = [];
+
+function createComet({x, y, radius, opacity}) {
+  comets.push({
+    x, y, radius, opacity,
+    lines: []
+  })
+}
+
+function drawLines(context, lines) {
+  context.beginPath();
+  for(let line of lines) {
+    context.lineTo(line.x, line.y);
+  }
+  context.strokeStyle = "#fff";
+  context.lineWidth = 1.5;
+  context.stroke();
+  context.closePath();
+}
+
+function drawComet(context, comet) {
+  drawStar(context, comet);
+  drawLines(context, comet.lines);
+}
+
+function updateComet(comet) {
+  comet.x += 1;
+  comet.y += 1;
+
+  comet.lines.push({x: comet.x, y: comet.y});
+  if(comet.lines.length > comet.radius * 15) comet.lines.shift();
+}
+
+function generateRandomComet(canvas) {
+
+  if(!document.hasFocus()) return;
+
+  let XorY = randomNumber(1, 10);
+
+  let x = randomNumber(0, canvas.width / 1.5, 4);
+  let y = 0;
+
+  if(XorY <= 5) {
+    x = 0;
+    y = randomNumber(0, canvas.height / 1.5, 4);
+  } 
+
+  createComet({
+    x,
+    y,
+    opacity: randomNumber(0.3, 1, 4),
+    radius: randomNumber(1, 3, 4)
+  })
+}
+
+function checkCometValidity(canvas, comet) {
+  if(comet.lines[0].x > canvas.width 
+  || comet.lines[0].y > canvas.height) {
+    comets.splice(comets.indexOf(comet), 1);
+  }
+}
+
+function loop(canvas, context) {
+
+  fixSizeOnLoop(canvas);
+
+  for(let comet of comets) {
+    updateComet(comet);
+    drawComet(context, comet);
+    checkCometValidity(canvas, comet);
   }
 
-  updateComet(comet) {
+  requestAnimationFrame(() => { loop(canvas, context) });
+}
 
-    comet.lines.push({x: comet.x, y: comet.y})
+async function startCometBackground(canvasSelector) {
+  let canvas = document.querySelector(canvasSelector);
+  await initializeBackground(canvas);
 
-    if(comet.lines.length > comet.radius*4) comet.lines.shift() 
+  let context = canvas.getContext("2d");
 
-    comet.x += comet.xspeed
-    comet.y += comet.yspeed
+  setInterval(() => {
+    generateRandomComet(canvas);
+  }, 7000)
 
-    if(comet.lines[0].x > this.canvas.width
-    || comet.lines[0].y > this.canvas.height) this.removeComet(comet)
-
-  }
-
-  drawComet(comet) {
-
-    this.drawStar(comet)
-
-    this.context.beginPath()
-    for(let line of comet.lines) {
-      this.context.lineTo(line.x, line.y)
-    }
-    this.context.strokeStyle = "#fff";
-    this.context.lineWidth = 1.5
-    this.context.stroke()
-    this.context.closePath()
-
-  }
-
+  loop(canvas, context);
 }
