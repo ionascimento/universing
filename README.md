@@ -6,6 +6,7 @@ Universing is a website to teach astronomical concepts in a simple way.
 ## Pages
 
 - Landing page
+- Tutorials
 - Astronomy history
 - Galileu Galilei
 - Astronomical Units
@@ -20,7 +21,6 @@ Universing is a website to teach astronomical concepts in a simple way.
 - Milky way
 - Black holes
 - Multiverses
-- ...
 - ...
 - Playground
 - Quiz
