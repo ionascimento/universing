@@ -7,10 +7,10 @@ Universing is a website to teach astronomical concepts in a simple way.
 
 - Landing page
 - Tutorials
-- Galileu Galilei
 - Earth movement
-- Solar System
 - The Moon
+- Galileu Galilei
+- Solar System
 - Astronomical Units
 - Light-years
 - Playground
