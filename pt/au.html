@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Unidade astronômica</h1>
+
+    <p>Unidade astronômica é uma unidade de comprimento dada pela distância média da Terra ao Sol, equivalente a 149,6 x 10<sup>6</sup>. A distância Terra-Sol varia ao longo do ano, pois a órbita da Terra em torno do Sol apresenta uma leve excentricidade: durante o apogeu e o perigeu, a Terra se encontra nas distâncias máxima e mínima, respectivamente, em relação ao Sol.</p>
+
+    <div class="image">
+      <img src="../img/au1.webp" class="img2" alt="Unidade astronômica.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

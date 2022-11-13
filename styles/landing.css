@@ -1,40 +1,7 @@
-footer {
-  width: 100%;
-  height: 1rem;
-}
-
-/* NAVBAR */
-
-.navbar {
-  padding: 3vw 3vw;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  font-size: 1.5vw;
-  gap: 2rem;
-  justify-content: flex-end;
-}
-
-.navbar a {
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 640px) {
-  .navbar {
-    display: none;
-  }
-}
-
 /* APRESENTATION */
 
 .apresentation {
-  margin-top: 10vh;
+  margin-top: 20vh;
   width: 100%;
   display: flex;
   flex-direction: column;

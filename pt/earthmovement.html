@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Movimento da terra</h1>
+
+    <p>O planeta Terra realiza dois movimentos principais. Em um primeiro movimento, chamado de translação, ela traça uma órbita em torno do Sol. Realiza também um giro em seu próprio eixo, chamado de rotação. Cada volta ao redor do Sol representa um ano, enquanto cada giro em torno de seu próprio eixo define um dia.</p>
+
+    <div class="image">
+      <img src="../img/earthmovement1.webp" class="img1" alt="Terra girando ao redor do sol">
+    </div>
+
+    <h2>O que é translação?</h2>
+
+    <p>A translação é o movimento realizado pela Terra em torno do Sol. Isso ocorre pelo campo gravitacional gerado pela massa do Sol, fazendo com que a Terra fique presa a sua órbita. Deste modo, um giro completo da Terra em volta do Sol dura cerca de 365 dias, 5 horas e 47 minutos. O planeta se move no espaço a uma velocidade orbital média de 29,78 km/s. Como o ano civil é contado apenas em dias, a cada quatro anos realiza-se o ano bissexto para compensar as quase seis horas anuais que ficaram de fora. Nele, é acrescido mais um dia (29 de fevereiro) ao calendário.</p>
+
+    <p>A Terra realiza uma trajetória muito semelhante a um círculo em torno do Sol, mas por não se tratar de um círculo perfeito, é chamada de trajetória elíptica. O raio médio da órbita terrestre é de 149,6 milhões de quilômetros. Entretanto, esse número varia entre dois momentos: o periélio, quando o raio é de 147,1 milhões de quilômetro e o afélio, momento mais distante, 152,1 milhões de quilômetros de raio.</p>
+    <p>Ao contrário do que algumas pessoas acreditam, as estações do ano não ocorrem por conta da distância da Terra para o Sol. Os fenômenos responsáveis para as mudanças de estação são os solstícios. Ou seja, a posição de cada hemisfério em relação ao Sol. É de acordo com o solstício, que o grau de incidência dos raios solares se altera. No verão, há uma maior incidência solar devido à inclinação do eixo terrestre em relação ao Sol. Isso ocorre de forma contrária entre os hemisférios. Quando é verão no hemisfério sul, é inverno no hemisfério norte, quando é outono no hemisfério sul, é primavera no hemisfério norte e assim sucessivamente.</p>
+
+    <div class="image">
+      <img src="../img/earthmovement2.webp" class="img2" alt="Terra girando ao redor do sol.">
+    </div>
+
+    <h2>O que é rotação?</h2>
+
+    <p>A rotação é o movimento que a Terra faz em torno de seu próprio eixo. Cada giro da Terra ao redor de si mesma dura 23 horas, 56 minutos, 4 segundos e 9 centésimos. Por isso, convencionou-se que o dia tem vinte e quatro horas. O eixo da Terra é uma linha imaginária que transpassa o planeta do polo norte ao sul. Esse eixo possui uma inclinação de cerca de 23,5 graus.</p>
+    <p>Conforme a Terra realiza o movimento de rotação (sentido anti-horário), parte de sua superfície fica exposta ao Sol, sendo responsável pelo dia e noite. Tomando como referência o diâmetro da Linha do Equador, pode-se afirmar que o movimento de rotação ocorre a uma velocidade média de 1674 km/h. Essa velocidade não pode ser sentida dentro da atmosfera.</p>
+
+    <div class="image">
+      <img src="../img/earthmovement3.webp" class="img2" alt="Terra girando ao redor de si mesma.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

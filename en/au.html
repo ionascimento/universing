@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Astronomical Units</h1>
+
+    <p>Astronomical unit is a unit of length given by the average distance from the Earth to the Sun, equivalent to 149.6 x 10<sup>6</sup>. The Earth-Sun distance varies throughout the year, as the Earth's orbit around the Sun has a slight eccentricity: during apogee and perigee, the Earth is at maximum and minimum distances, respectively, from the Sun.</p>
+
+    <div class="image">
+      <img src="../img/au1.webp" class="img2" alt="Astronomical units.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

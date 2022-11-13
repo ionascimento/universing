@@ -119,8 +119,6 @@ function updateComet(comet) {
 
 function generateRandomComet(canvas) {
 
-  if(!document.hasFocus()) return;
-
   let XorY = randomNumber(1, 10);
 
   let x = randomNumber(0, canvas.width / 1.5, 4);
@@ -166,7 +164,7 @@ async function startCometBackground(canvasSelector) {
   let context = canvas.getContext("2d");
 
   setInterval(() => {
-    generateRandomComet(canvas);
+    if(document.hasFocus()) generateRandomComet(canvas);
   }, 7000)
 
   loop(canvas, context);

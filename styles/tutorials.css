@@ -1,32 +1,3 @@
-/* NAVBAR */
-
-.navbar {
-    padding: 3vw 3vw;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    font-size: 1.5vw;
-    gap: 2rem;
-    justify-content: flex-end;
-    
-  }
-  
-  .navbar a {
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  
-  @media screen and (max-width: 640px) {
-    .navbar {
-      display: none;
-    }
-  }
-
 /* ROADMAP */
 
 .roadmap {
@@ -38,8 +9,17 @@
     width: 100%;
 }
 
-.roadmap > h1 {
+.help {
+    text-align: center;
+}
+
+.help h1 {
     font-size: 4rem;
+}
+
+.help h2 {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .roads {
@@ -89,42 +69,27 @@
     height: auto;
 }
 
-/* FOOTER */
+@media screen and (max-width: 720px) {
+    .help h1 {
+        font-size: 3rem;
+    }
+    .help h2 {
+        font-size: 1rem;
+    }
+    
+    .roads {
+        gap: 8rem;
+    }
+    
+    .road {
+        flex-direction: column;
+    }
 
-#footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6rem;
-    padding: 4rem 2rem 2rem;
-    gap: 2rem;
-}
+    .separator {
+        display: none;
+    }
 
-.author {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    text-align: center;
-}
-
-.author a {
-    text-decoration: none;
-}
-
-.author img {
-    max-height: 2rem;
-}
-
-.copyright {
-    font-weight: 300;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    text-align: center;
-}
-
-.copyright a {
-    font-weight: 500;
-    text-align: center;
+    .reverse {
+        flex-direction: column-reverse;
+    }
 }

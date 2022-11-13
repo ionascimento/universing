@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Solar System</h1>
+
+    <p>The Solar System is a set of celestial bodies that gravitate in the orbit of a sun (a star). Our solar system is made up of eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. In addition to them, there are five more dwarf planets (Ceres, Pluto, Haumea, Makemake, Eris) and many other stars, such as natural satellites, asteroids, meteors, meteoroids and comets. The Sun and our entire solar system are part of a galaxy, which is called the Milky Way.</p>
+
+    <div class="image">
+      <img src="../img/solar-system1.webp" class="img2" alt="Solar system.">
+    </div>
+
+    <h2>Features of the Solar System</h2>
+
+    <p>Initially, it is necessary to know that the Sun is a star. This star has 99.8% of the entire mass of the solar system and, according to Newton's law of universal gravitation, mass attracts mass. Thus, the Sun attracts everything that exists around it and imprisons a series of stars and celestial bodies in its orbit, forming what we call the solar system. The interplanetary medium is the space between the components of the solar system consisting of dust, which are microscopic particles in the solid state, and gas, a mixture of gaseous flow and electrically charged particles.</p>
+
+    <div class="image">
+      <img src="../img/solar-system2.webp" class="img2" alt="Picture showing all the Solar System's astros.">
+    </div>
+
+    <h2>Astros</h2>
+
+    <p>It is important to note that the distances between the stars are gigantic. In astronomical space, the light year is used as a unit of measurement. The light year is the distance light travels in one year in a vacuum. It is known that the speed of light is 300 000 kilometers per second (km/s). In one year light travels a distance of 9,460,800,000,000 kilometers (nine trillion, four hundred and sixty billion and eight hundred million kilometers).</p>
+
+    <div class="image">
+      <img src="../img/solar-system3.webp" class="img2" alt="Distance between the astros.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

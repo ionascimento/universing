@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>The Moon</h1>
+
+    <p>The Moon is Earth's only natural satellite. It was formed at practically the same time as the Earth with the emergence of the Universe. Because of its proximity to planet Earth, it is the largest and brightest object in the terrestrial night sky. Being the fifth largest moon in the solar system. The name Moon comes from the Latin, Luna, and was used to indicate the Earth's natural satellite, as at first it was the only known moon. It wasn't until 1610 that Galileo Galilei discovered that there were other moons in the solar system.</p>
+    
+    <div class="image">
+      <img src="../img/moon1.webp" class="img1" alt="The Moon.">
+    </div>
+
+    <h2>Origin of the Moon</h2>
+
+    <p>The most accepted theory for the origin of the Moon is that it arose from the collision of a celestial body with dimensions similar to Mars with the Earth, about 4.5 billion years ago. The debris from the explosion would be the satellite's formers, which initially had a lot of molten material. Over time, this material crystallized and formed the satellite we know today.</p>
+
+    <h2>Main features</h2>
+
+    <p>The Moon's mass is 7.35.1022 kg and corresponds to approximately 1.23% of the Earth's mass. Its diameter is 3 475 km, which is 3.67 times smaller than the diameter of Earth. The average distance between the Moon and Earth is 384 400 km. That's a very big distance. To get an idea, we could put 30 Earth-sized planets lined up between them. Studies show that the Moon moves 3.78 cm away from Earth per year. This fact makes the days on Earth longer. The Moon's gravity is 1.62 m/s2. This makes a person's weight on the Moon equal to 0.166 of their weight on Earth. The temperature on its surface can reach around 127 °C when illuminated by the Sun and -173 °C when it is not lit.</p> 
+    
+    <p>The fact that the Moon has a thin layer of atmosphere explains this temperature variation. In addition, the sparse atmosphere offers no protection from the sun's rays. The lack of a thicker atmosphere also explains the lunar surface having numerous craters, a result of the continuous impacts with meteors, comets and asteroids. The Moon rotates around its own axis (rotational motion) at the same speed as it rotates around the Earth. Therefore, from Earth we always see the same face of the Moon. Its rotation period around the Earth is 27 Earth days, however it takes 29 days to reach the same position with respect to the Sun.</p>
+
+    <div class="image">
+      <img src="../img/moon2.webp" class="img2" alt="Moon view from Earth.">
+    </div>
+
+    <h2>Influence on the tides</h2>
+
+    <p>Without the existence of the Moon, the Earth would have no tides. The phenomenon in the seas occurs as a result of the force of gravitational attraction exerted by the natural satellite and the Sun. This force is proportional to the masses of the bodies involved and inversely proportional to the distance between them. In this case the mass of the Sun is much greater than the mass of the Moon. However, the smaller distance between the Moon and the Earth, makes the force exerted by our satellite to be twice the force exerted by the Sun. In fact, the tide is the result of the combination of forces exerted by both the Moon and the Sun, depending on their positions relative to the Earth. At full moon and new moon, the two forces add up to form higher high tides and lower low tides. In the first quarter and second quarter, this effect will be attenuated.</p>
+
+    <div class="image">
+      <img src="../img/moon3.webp" class="img2" alt="Moon picture from the sea.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

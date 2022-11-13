@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Sistema solar</h1>
+
+    <p>O Sistema Solar é um conjunto de corpos celestes que gravitam na órbita de um sol (uma estrela). O nosso sistema solar é formado por oito planetas: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno. Além deles, existem mais cinco planetas anões (Ceres, Plutão, Haumea, Makemake, Éris) e muitos outros astros, como satélites naturais, asteroides, meteoros, meteoroides e cometas. O Sol e todo o nosso sistema solar faz parte de uma galáxia, que se chama Via-Láctea.</p>
+
+    <div class="image">
+      <img src="../img/solar-system1.webp" class="img2" alt="Sistema solar.">
+    </div>
+
+    <h2>Características do Sistema Solar</h2>
+
+    <p>Inicialmente, é preciso saber que o Sol é uma estrela. Essa estrela possui 99,8% de toda a massa do sistema solar e, segundo a lei da gravitação universal de Newton, massa atrai massa. Assim, o Sol atrai tudo o que existe a sua volta e aprisiona uma série de astros e corpos celestes em sua órbita, formando o que chamamos de sistema solar. O meio interplanetário é o espaço existente entre os componentes do sistema solar constituído de poeira, que são partículas microscópicas no estado sólido, e gás, uma mistura de fluxo gasoso e partículas carregadas eletricamente.</p>
+
+    <div class="image">
+      <img src="../img/solar-system2.webp" class="img2" alt="Planetas do sistema solar.">
+    </div>
+
+    <h2>Astros</h2>
+
+    <p>De partida, é importante notar que as distâncias entre os astros são gigantescas. No espaço astronômico é utilizado o ano-luz como unidade de medida. O ano-luz é a distância que a luz percorre em um ano no vácuo. Sabe-se que a velocidade da luz é de 300 000 quilômetros por segundo (km/s). Em um ano a luz percorre a distância de 9.460.800.000.000 quilômetros (nove trilhões, quatrocentos e sessenta bilhões e oitocentos milhões de quilômetros).</p>
+
+    <div class="image">
+      <img src="../img/solar-system3.webp" class="img2" alt="Distância entre os astros do sistema solar.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

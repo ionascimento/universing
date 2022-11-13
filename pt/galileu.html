@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Galileu Galilei</h1>
+
+    <p>Galileu Galilei foi um importante astrônomo, físico e matemático italiano. Ele é considerado um marco da revolução científica nas áreas da física e da astronomia. Os estudos de Galileu foram fundamentais para o desenvolvimento da mecânica (movimento dos corpos) e a descoberta sobre os planetas e os satélites. Fundador da Ciência Moderna e Pai da Física Matemática, uma de suas relevantes contribuições reside, propriamente, na criação do método científico.</p>
+
+    <div class="image">
+      <img src="../img/galileu1.webp" class="img2" alt="Galileu Galilei.">
+    </div>
+
+    <div class="citation">
+      <p>"Todas as verdades são fáceis de perceber depois de terem sido descobertas; o problema é descobri-las."</p>
+    </div>
+
+    <h2>Descobertas</h2>
+
+    <p>Defensor do Heliocentrismo de Nicolau Copérnico (1473-1543), Galileu refutou as ideias de Aristóteles (384 a.C. - 322 a. C), uma vez que acreditava que a terra não estava no centro do universo (Geocentrismo). Além disso, em 1589, publica um texto que discorda do teoria proposta pelo filósofo grego sobre o peso dos corpos em queda livre. Dessa maneira, demostrou que a velocidade da queda independe do peso dos corpos. Tentou medir a velocidade da luz, mas os equipamentos usados não foram capazes de fazer tal medição.</p>
+
+    <p>Ao tomar conhecimento de um instrumento que permitia ver objetos à longas distâncias, construiu seu próprio telescópio. Conseguiu aperfeiçoar o equipamento, chegando a um aumento de 30 vezes, o que lhe permitiu fazer inúmeras observações dos corpos celestes. Entre suas descobertas astronômicas destacam-se o relevo da Lua, a composição estelar da Via Láctea, os Satélites de Júpiter e as fases de Vênus.</p>
+
+    <h2>Invenções de Galileu Galilei</h2>
+
+    <p>Além de filósofo, professor, físico e astrônomo, Galileu foi um inventor. Suas criações o auxiliaram no aprofundamento de teorias sobre o movimento dos corpos, a inércia e os astros. Como exemplo, podemos citar: o relógio de pêndulo, o binóculo, o telescópio astronômico, a balança hidrostática, o compasso geométrico, uma régua calculadora.</p>
+
+    <div class="image">
+      <img src="../img/galileu2.webp" class="img2" alt="Telescópio.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

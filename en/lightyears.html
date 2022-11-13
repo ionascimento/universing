@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Light-years</h1>
+
+    <p>Light year is a unit of measurement used in astronomy. It means the distance that a photon (a particle of light) travels in a year in a vacuum. A light year is the distance traveled by light in one year in a vacuum. The speed of light is the fastest there is. The ability of a photon to travel is about 300,000 kilometers per second. Each light year corresponds to about 9.5 trillion kilometers, that is, 9,500,000,000,000 kilometers.</p>
+
+    <p>A photon travels the distance from the Moon to the planet Earth in about 1 second. Despite being the closest celestial body to Earth, the distance between the Moon and our planet is approximately 384 thousand kilometers. Why is light year the astronomical unit? Simply to avoid using gigantic numbers, after all, in relation to the Universe, the distances are really immense. Do not confuse! A light year is not a unit of time, it is a unit of length.</p>
+
+    <div class="image">
+      <img src="../img/lightyears1.webp" class="img2" alt="Universe light.">
+    </div>
+
+    <h2>How to calculate</h2>
+
+    <p>To find out how much a light year is, just multiply the speed of light by the number of seconds in a year. A year has 31,536,000 seconds.</p>
+
+    <p>300.000 km x 31.536.000 = 9.460.800.000.000 km</p>
+
+    <p>It is usual to write very large numbers using scientific notation. A light year is approximately 9 point 5 space. space 10 to the power of 12 space km. So, if 1 light-year is approximately 9.5 trillion kilometers, what is 2 light-years worth? 9,460,800,000,000 km * 2 km = 18,921,600,000,000 km, that is, eighteen trillion, nine hundred and twenty-one billion and six hundred million kilometers.</p>
+
+    <div class="image">
+      <img src="../img/lightyears2.webp" class="img2" alt="Distances in light-years.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

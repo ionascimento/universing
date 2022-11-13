@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Galileo Galilei</h1>
+
+    <p>Galileo Galilei was an important Italian astronomer, physicist and mathematician. It is considered a landmark of the scientific revolution in the fields of physics and astronomy. Galileo's studies were fundamental for the development of mechanics (the movement of bodies) and the discovery of planets and satellites. Founder of Modern Science and Father of Mathematical Physics, one of his relevant contributions lies, properly speaking, in the creation of the scientific method.</p>
+
+    <div class="image">
+      <img src="../img/galileu1.webp" class="img2" alt="Galileu Galilei">
+    </div>
+
+    <div class="citation">
+      <p>"All truths are easy to perceive after they have been discovered; the problem is discovering them."</p>
+    </div>
+
+    <h2>Discoveries</h2>
+
+    <p>Defender of the Heliocentrism of Nicolaus Copernicus (1473-1543), Galileo refuted the ideas of Aristotle (384 BC - 322 BC), since he believed that the earth was not at the center of the universe (Geocentrism). In addition, in 1589, he published a text that disagreed with the theory proposed by the Greek philosopher about the weight of bodies in free fall. In this way, he showed that the speed of the fall does not depend on the weight of the bodies. He tried to measure the speed of light, but the equipment used was not able to make such a measurement.</p>
+
+    <p>When he became aware of an instrument that allowed him to see objects at long distances, he built his own telescope. He managed to improve the equipment, reaching a magnification of 30 times, which allowed him to make numerous observations of celestial bodies. Among his astronomical discoveries are the relief of the Moon, the stellar composition of the Milky Way, the Satellites of Jupiter and the phases of Venus.</p>
+
+    <h2>Galileo Galilei's Inventions</h2>
+
+    <p>In addition to being a philosopher, teacher, physicist and astronomer, Galileo was an inventor. His creations helped him to deepen theories about the movement of bodies, inertia and the stars. As an example, we can mention: the pendulum clock, the binoculars, the astronomical telescope, the hydrostatic balance, the geometric compass, a calculator ruler.</p>
+
+    <div class="image">
+      <img src="../img/galileu2.webp" class="img2" alt="An astronomical Telescope in the night.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

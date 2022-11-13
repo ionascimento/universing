@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/content.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <section class="content">
+    
+    <h1>Anos-luz</h1>
+
+    <p>Ano-luz é uma unidade de medida usada na Astronomia. Significa a distância que um fóton (uma partícula de luz) percorre durante um ano, no vácuo. Um ano-luz é o comprimento da distância percorrida pela luz em um ano no vácuo. A velocidade da luz é a mais rápida que existe. A capacidade de um fóton se deslocar é cerca de 300.000 quilômetros por segundo. Cada ano-luz corresponde a cerca de 9,5 trilhões de quilômetros, ou seja, 9.500.000.000.000 quilômetros.</p>
+
+    <p>Um fóton percorre a distância da Lua ao planeta Terra em cerca de 1 segundo. Apesar de ser o corpo celeste mais perto da Terra, a distância entre a Lua e o nosso planeta é de aproximadamente 384 mil quilômetros.] Por que ano-luz é a unidade astronômica? Simplesmente para evitar a utilização de números gigantescos, afinal, em relação ao Universo, as distâncias são realmente imensas. Não confunda! Ano-luz não é uma unidade de tempo, é uma unidade de comprimento.</p>
+
+    <div class="image">
+      <img src="../img/lightyears1.webp" class="img2" alt="Universo.">
+    </div>
+
+    <h2>Como calcular</h2>
+
+    <p>Para saber quanto equivale um ano-luz basta multiplicar a velocidade da luz pelo número de segundos que existem num ano. Um ano tem 31.536.000 de segundos.</p>
+
+    <p>300.000 km x 31.536.000 = 9.460.800.000.000 km</p>
+
+    <p>É usual escrever números muito grandes usando notação científica. Um ano-luz é, aproximadamente, 9 vírgula 5 espaço. espaço 10 à potência de 12 espaço km. Então, se 1 ano-luz equivale a aproximadamente 9,5 trilhões de quilômetros, quanto vale 2 anos-luz? 9.460.800.000.000 km * 2 km = 18.921.600.000.000 km, ou seja, dezoito trilhões, novecentos e vinte e um bilhões e seiscentos milhões de quilômetros.</p>
+
+    <div class="image">
+      <img src="../img/lightyears2.webp" class="img2" alt="Comparação de tamanho em anos-luz.">
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

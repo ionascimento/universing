@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/landing.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="../scripts/scrollreveal.js"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <div class="apresentation">
+    <div class="logo">
+      <img src="../img/earth.webp" alt="Planeta Terra com um foguete em volta.">
+      <h1>Universing</h1>
+    </div>
+    <div class="slogan">
+      <h2>Um novo jeito de descobrir o universo.</h2>
+    </div>
+    <div class="cta">
+      <a href="tutorials.html">Descobrir agora</a>
+    </div>
+  </div>
+
+  <section class="about center">
+
+    <div class="about-item">
+      <div class="center">
+        <img src="../img/saturn.webp" alt="Planeta Saturno">
+      </div>
+      <div class="y-p4">
+        <h1>Aprenda conceitos astronomicos de uma maneira simples.</h1>
+        <p>Tenha lições gratuitas e aprenda como o universo funciona de uma maneira simples. Unidades astrônomicas, movimento da Terra, Fases da lua, tudo em apenas um lugar.</p>
+      </div>
+    </div>
+
+    <div class="about-item reverse">
+      <div class="center">
+        <img src="../img/neptune.webp" alt="Planeta Netuno">
+      </div>
+      <div class="y-p4">
+        <h1>Para qualquer um, de qualquer idade.</h1>
+        <p>Nossos tutorias são amigáveis para todas as idades e ainda assim te ensinará conceitos importantes para todas as fases da sua vida. Se prepare para o ensino fundamental, ensino médio ou faculdade.</p>
+      </div>
+    </div>
+
+    <div class="about-item">
+      <div class="center">
+        <img src="../img/venus.webp" alt="Planeta Venus">
+      </div>
+      <div class="y-p4">
+        <h1>Aprendizado ativo.</h1>
+        <p>Nossos tutoriais são ativos. No fim, você terá um quiz para praticar tudo o que aprendeu. Você pode também brincar no nosso playground, um simulador interativo do sistema solar.</p>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <img src="../img/rocket.webp" alt="Um foguete">
+      <div class="invite">
+        <h1>Embarque nesse foguete hoje</h1>
+        <a href="tutorials.html">Eu quero embarcar</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    async function main() {
+      await startStarBackground('#background');
+      await startCometBackground('#comet');
+    }
+
+    main();
+  </script>
+
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

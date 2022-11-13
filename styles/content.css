@@ -1,0 +1,45 @@
+.content {
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.content img {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img1 {
+  max-height: 32rem;
+}
+
+.img2 {
+  border: 1px solid #fff;
+}
+
+.citation {
+  width: 100%;
+  margin: 3rem 0;
+}
+
+.citation p {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+}
