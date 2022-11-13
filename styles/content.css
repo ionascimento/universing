@@ -43,3 +43,9 @@
   font-style: italic;
   font-size: 1.2rem;
 }
+
+@media screen and (max-width: 720px) {
+  .content h1 {
+    font-size: 2rem;
+  }
+}

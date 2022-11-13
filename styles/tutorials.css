@@ -70,8 +70,13 @@
 }
 
 @media screen and (max-width: 720px) {
+    
+    .help {
+        padding: 0 2rem;
+    }
+    
     .help h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .help h2 {
         font-size: 1rem;

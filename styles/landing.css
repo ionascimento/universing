@@ -71,6 +71,10 @@
   .slogan h2 {
     font-size: 7vw;
   }
+
+  .apresentation {
+    padding: 0 2rem;
+  }
 }
 
 /* ABOUT */
