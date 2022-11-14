@@ -13,6 +13,7 @@
 .score {
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
   padding: 1rem;
 }
 
@@ -72,6 +73,10 @@
 
   .options li {
     width: 100%;
+  }
+
+  .score p {
+    font-size: 1rem;
   }
 
 }
