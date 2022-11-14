@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/quiz.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="keywords" content="universing, astronomico, astronomia, universo, espaço, terra, lua, marte">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing é uma nova maneira de descobrir o universo. Aprenda como o universo funciona de uma forma simples.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Voltar</p>
+    </a>
+  </nav>
+
+  <div class="game-container">
+    <div class="score">
+      <p>Score: 0/0</p>
+      <p>Question: 0/0</p>
+      <p>Record: 0/0</p>
+    </div>
+    <div class="statement">
+      <p>Question</p>
+    </div>
+    <div class="options">
+      <ul>
+        <li>Option 1</li>
+        <li>Option 2</li>
+        <li>Option 3</li>
+        <li>Option 4</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronauta">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>Esse é um TCM feito por Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="../en/landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+  <script>
+    const languagePack = [
+      "Pontos",
+      "Questão",
+      "Recorde",
+      "Quiz finalizado!\n\nSua pontuação",
+    ]
+
+    const questions = [
+      {
+        statement: "Qual das alternativas a seguir NÃO apresenta uma característica que diferencia os movimentos de rotação e translação?",
+        options: [
+          "A duração",
+          "A direção",
+          "A inclinação",
+          "A velocidade"
+        ],
+        correct: 2
+      },
+      {
+        statement: "A principal consequência do movimento de translação é",
+        options: [
+          "Duração do dia e da noite",
+          "Efeito estufa natural",
+          "As estações do ano",
+          "A posição do nascer e por do Sol"
+        ],
+        correct: 2
+      },
+      {
+        statement: "Qual das alternativas a seguir NÃO apresenta consequências dos movimentos da Terra?",
+        options: [
+          "Sucessão de dias e noites",
+          "Sucessão de solstícios e equinócios",
+          "Sistema de fuso-horários",
+          "Uniformidade das estações do ano"
+        ],
+        correct: 3
+      },
+      {
+        statement: "O Sistema Solar é composto por um total de oito planetas. O conceito de planeta está atrelado a determinadas características, entre elas:",
+        options: [
+          "Contar com iluminação direta do Sol e ter água.",
+          "Possuir mais de uma lua e receber luz do Sol.",
+          "Apresentar estrelas e possuir oxigenação do ar.",
+          "Ter equilíbrio estático e orbitar ao redor do Sol."
+        ],
+        correct: 3
+      },
+      {
+        statement: "O Sistema Solar possui quatro planetas rochosos, também chamados de telúricos, formados basicamente por diversos metais e rochas. Quais são eles?",
+        options: [
+          "Mercúrio, Vênus, Terra e Marte.",
+          "Terra, Marte, Saturno e Urano.",
+          "Saturno, Mercúrio, Marte e Terra.",
+          "Marte, Terra, Júpiter e Saturno."
+        ],
+        correct: 0
+      },
+      {
+        statement: "Os planetas gasosos são menos conhecidos pela ciência, porém sabe-se que são constituídos prioritariamente por diversos gases, principalmente",
+        options: [
+          "Hidrogênio e neônio.",
+          "Hidrogênio e hélio.",
+          "Oxigênio e ozônio.",
+          "Nitrogênio e xenônio."
+        ],
+        correct: 1
+      },
+      {
+        statement: "Os planetas gasosos possuem características em comum que os diferenciam dos planetas rochosos. No geral, esses planetas, formados predominantemente por gases, apresentam ainda uma",
+        options: [
+          "Pequena quantidade de satélites naturais que orbitam ao seu redor.",
+          "Superfície formada por pequenos fragmentos de rochas e solos.",
+          "Dimensão territorial caracterizada pela grande extensão da sua área.",
+          "Elevada quantidade de minerais silicatos na sua composição."
+        ],
+        correct: 3
+      },
+      {
+        statement: "Os anéis planetários são grandes estruturas formadas por materiais diversos que orbitam ao redor dos planetas. Os planetas do Sistema Solar que possuem anéis são",
+        options: [
+          "Júpiter, Saturno, Urano e Netuno",
+          "Júpiter, Saturno, Vênus e Mercúrio",
+          "Júpiter, Saturno, Urano e Marte.",
+          "Mercúrio, Júpiter, Saturno e Urano."
+        ],
+        correct: 0
+      },
+      {
+        statement: "Os planetas gasosos possuem características em comum que os diferenciam dos planetas rochosos. No geral, esses planetas, formados predominantemente por gases, apresentam ainda uma",
+        options: [
+          "Pequena quantidade de satélites naturais que orbitam ao seu redor.",
+          "Superfície formada por pequenos fragmentos de rochas e solos.",
+          "Dimensão territorial caracterizada pela grande extensão da sua área.",
+          "Elevada quantidade de minerais silicatos na sua composição."
+        ],
+        correct: 1
+      },
+      {
+        statement: "A posição dos planetas ao longo do Sistema Solar interfere diretamente nas suas características naturais. Indique a alternativa que apresenta, respectivamente, o planeta do Sistema Solar mais próximo e o mais distante do Sol:",
+        options: [
+          "Mercúrio e Netuno.",
+          "Vênus e Saturno.",
+          "Mercúrio e Júpiter.",
+          "Marte e Saturno."
+        ],
+        correct: 0
+      },
+    ];
+  </script>
+  <script src="../scripts/quiz.js"></script>
+
+</body>
+</html>

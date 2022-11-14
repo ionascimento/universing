@@ -1,0 +1,77 @@
+.game-container {
+  width: 80%;
+  background: #fff;
+  border-radius: 1rem;
+  margin: 3rem auto;
+  padding: 5rem 2rem;
+}
+
+.game-container p {
+  color: #000;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.score p {
+  font-size: 1.3rem;
+}
+
+.statement {
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+  width: 60%;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+.options ul {
+  list-style: none;
+  display: grid;
+  gap: 3rem;
+}
+.options li {
+  padding: 1rem;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 1rem;
+  min-width: 6rem;
+  text-align: center;
+}
+.options li:hover {
+  cursor: pointer;
+  background: #6256ff;
+}
+
+.correct {
+  background: #00ff00!important;
+}
+.wrong {
+  background: #ff0000!important;
+}
+
+@media screen and (max-width: 720px) {
+
+  .statement {
+    width: 100%;
+  }
+
+  .options ul {
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .options li {
+    width: 100%;
+  }
+
+}

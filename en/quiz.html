@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/quiz.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="keywords" content="universing, astronomic, astronomy, universe, space, earth, moon, mars">
+  <meta property="og:type" content="page">
+  <!-- <meta property="og:url" content="https://"> -->
+  <meta property="og:title" content="Universing">
+  <!-- <meta property="og:image" content="https://.png"> -->
+  <meta property="og:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+  <meta name="twitter:title" content="Universing">
+  <meta name="twitter:description"
+    content="Universing is a new way of discovering the universe. Learn how the universe works in a simple and fun way.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="../scripts/utils.js"></script>
+
+  <link rel="shortcut icon" href="../img/earth.webp" type="image/webp">
+
+  <!-- https://www.flaticon.com/packs/universe-28 -->
+  <!-- https://www.flaticon.com/packs/space-117 -->
+
+  <title>Universing</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="tutorials.html">
+      <img src="../img/arrow-left.svg" alt="Home">
+      <p>Back</p>
+    </a>
+  </nav>
+
+  <div class="game-container">
+    <div class="score">
+      <p>Score: 0/0</p>
+      <p>Question: 0/0</p>
+      <p>Record: 0/0</p>
+    </div>
+    <div class="statement">
+      <p>Question</p>
+    </div>
+    <div class="options">
+      <ul>
+        <li>Option 1</li>
+        <li>Option 2</li>
+        <li>Option 3</li>
+        <li>Option 4</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="author">
+      <img src="../img/astronaut.webp" alt="Astronaut">
+      <a href="https://www.github.com/ioolliver/universing" target="_blank">Isaque Nascimento &copy; 2022</a>
+    </div>
+    <div class="copyright">
+      <p>This is a year-end project made by Isaque Nascimento 1ºDS 2022</p>
+    </div>
+    <div class="languages">
+      <a href="../pt/landing.html">
+        <img src="../img/br.svg" alt="Portuguese">
+      </a>
+      <a href="landing.html">
+        <img src="../img/uk.svg" alt="English">
+      </a>
+    </div>
+  </div>
+
+  <canvas id="background"></canvas>
+  <canvas id="comet"></canvas>
+  <script src="../scripts/background.js"></script>
+  <script>
+    startStarBackground('#background');
+  </script>
+  <script src="../scripts/animate.js"></script>
+  <script>
+    const languagePack = [
+      "Score",
+      "Question",
+      "Record",
+      "Quiz finished!\n\nYour points",
+    ]
+
+    const questions = [
+      {
+        statement: "Which of the following does NOT have a characteristic that differentiates rotational and translational motions?",
+        options: [
+          "The duration",
+          "The direction",
+          "The inclination",
+          "The speed"
+        ],
+        correct: 2
+      },
+      {
+        statement: "The main consequence of the translational motion is",
+        options: [
+          "Duration of day and night",
+          "Natural greenhouse effect",
+          "The seasons of the year",
+          "The position of sunrise and sunset"
+        ],
+        correct: 2
+      },
+      {
+        statement: "Which of the following is NOT a consequence of the Earth's motions?",
+        options: [
+          "Succession of days and nights",
+          "Succession of Solstices and Equinoxes",
+          "Time zone system",
+          "Uniformity of the seasons"
+        ],
+        correct: 3
+      },
+      {
+        statement: "The Solar System is made up of a total of eight planets. The concept of a planet is linked to certain characteristics, among them:",
+        options: [
+          "Count on direct sunlight and have water.",
+          "Possess more than one moon and receive light from the Sun.",
+          "Present stars and have air oxygenation.",
+          "Have static equilibrium and orbit around the Sun."
+        ],
+        correct: 3
+      },
+      {
+        statement: "The Solar System has four rocky planets, also called telluric, basically formed by various metals and rocks. Which ones are they?",
+        options: [
+          "Mercury, Venus, Earth and Mars.",
+          "Earth, Mars, Saturn and Uranus.",
+          "Saturn, Mercury, Mars and Earth.",
+          "Mars, Earth, Jupiter and Saturn."
+        ],
+        correct: 0
+      },
+      {
+        statement: "The gaseous planets are less known by science, but it is known that they are constituted primarily by several gases, mainly",
+        options: [
+          "Hydrogen and neon.",
+          "hydrogen and helium.",
+          "Oxygen and ozone.",
+          "Nitrogen and xenon."
+        ],
+        correct: 1
+      },
+      {
+        statement: "Gas planets have common characteristics that set them apart from rocky planets. In general, these planets, formed predominantly by gases, still have a",
+        options: [
+          "Small amount of natural satellites that orbit around it.",
+          "Surface formed by small fragments of rocks and soil.",
+          "Territorial dimension characterized by the great extension of its area.",
+          "High amount of silicate minerals in its composition."
+        ],
+        correct: 3
+      },
+      {
+        statement: "Planetary rings are large structures made up of diverse materials that orbit around the planets. Planets in the Solar System that have rings are",
+        options: [
+          "Jupiter, Saturn, Uranus and Neptune",
+          "Jupiter, Saturn, Venus and Mercury",
+          "Jupiter, Saturn, Uranus and Mars",
+          "Mercury, Jupiter, Saturn and Uranus"
+        ],
+        correct: 0
+      },
+      {
+        statement: "Gas planets have common characteristics that set them apart from rocky planets. In general, these planets, formed predominantly by gases, still have a",
+        options: [
+          "Small amount of natural satellites that orbit around it.",
+          "Surface formed by small fragments of rocks and soil.",
+          "Territorial dimension characterized by the great extension of its area.",
+          "High amount of silicate minerals in its composition."
+        ],
+        correct: 1
+      },
+      {
+        statement: "The position of planets throughout the Solar System directly interferes with their natural characteristics. Indicate the alternative that presents, respectively, the nearest and farthest planet in the Solar System from the Sun:",
+        options: [
+          "Mercury and Neptune.",
+          "Venus and Saturn.",
+          "Mercury and Jupiter.",
+          "Mars and Saturn."
+        ],
+        correct: 0
+      },
+    ];
+  </script>
+  <script src="../scripts/quiz.js"></script>
+
+</body>
+</html>
