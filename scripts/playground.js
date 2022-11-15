@@ -255,6 +255,29 @@ function update_scale(delta) {
     SCALE = decrease_scale(delta) / AU;
 }
 
+function move_screen(move) {
+    if(mouseDown) {
+            
+        if(move.x != lastPosition.x) {
+            xVariant += move.clientX - lastPosition.x;
+        }
+        if(move.y != lastPosition.y) {
+            yVariant += move.clientY - lastPosition.y;
+        }
+
+        let limit = variant_limit(get_current_scale());
+
+        if(xVariant < limit * -1) xVariant = limit * -1;
+        if(xVariant > limit) xVariant = limit;
+        if(yVariant < limit * -1) yVariant = limit * -1;
+        if(yVariant > limit) yVariant = limit;
+
+
+    }
+
+    lastPosition = {x: move.clientX, y: move.clientY};
+}
+
 function start_listeners() {
 
     canvas.onwheel = (wheel) => {
@@ -263,26 +286,11 @@ function start_listeners() {
     }
 
     canvas.onmousemove = (move) => {
-        if(mouseDown) {
-            
-            if(move.x != lastPosition.x) {
-                xVariant += move.clientX - lastPosition.x;
-            }
-            if(move.y != lastPosition.y) {
-                yVariant += move.clientY - lastPosition.y;
-            }
+        move_screen(move);
+    }
 
-            let limit = variant_limit(get_current_scale());
-
-            if(xVariant < limit * -1) xVariant = limit * -1;
-            if(xVariant > limit) xVariant = limit;
-            if(yVariant < limit * -1) yVariant = limit * -1;
-            if(yVariant > limit) yVariant = limit;
-
-
-        }
-
-        lastPosition = {x: move.clientX, y: move.clientY};
+    canvas.ontouchmove = (move) => {
+        move_screen(move.touches[0]);
     }
 
     canvas.onmousedown = () => {
@@ -293,8 +301,12 @@ function start_listeners() {
         mouseDown = false;
     }
 
-    canvas.onresize = () => {
-        alert('a');
+    canvas.ontouchstart = () => {
+        mouseDown = true;
+    }
+
+    canvas.ontouchend = () => {
+        mouseDown = false;
     }
 
 }
