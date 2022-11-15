@@ -290,7 +290,7 @@ function start_listeners() {
     }
 
     canvas.ontouchmove = (move) => {
-        move_screen(move.touches[0]);
+        move_screen(move.touches[move.touches.length-1]);
     }
 
     canvas.onmousedown = () => {
