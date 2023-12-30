@@ -3,7 +3,7 @@
 
 Universing is a website to teach astronomical concepts in a simple way.
 
-This is a project for my first year of technical graduation in software development at ETEC de São Paulo. On this first year, I learned about HTML, CSS and Javascript and this project is a compilation of everything I absorbed.
+This is a project for my first year of technical graduation in software development at ETEC de São Paulo. On this first year, I learned about HTML, CSS and Javascript and this project is a compilation of everything I absorbed + my previous knowledge.
 
 ## Pages
 
